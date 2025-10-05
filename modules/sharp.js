@@ -1,4 +1,4 @@
-export default function edgeDetection(imageData) {
+function sharp(imageData) {
     const width = imageData.width;
     const height = imageData.height;
     const data = imageData.data;
@@ -31,3 +31,20 @@ export default function edgeDetection(imageData) {
 
     return new ImageData(edgeData, width, height);
 }
+
+// 静的プロパティとしてキーを定義
+sharp.keys = {
+    input: [
+        { name: "data", type: "Uint8ClampedArray"},
+        { name: "width", type: "number", "min": 0},
+        { name: "height", type: "number", "min": 0}
+    ],
+    comment: "User data fetching function",
+    output: [
+        { name: "data", type: "Uint8ClampedArray"},
+        { name: "width", type: "number", "min": 0},
+        { name: "height", type: "number", "min": 0}
+    ]  
+};
+
+export default sharp;
