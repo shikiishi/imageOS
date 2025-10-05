@@ -161,7 +161,7 @@ async function addElements(data) {
 // JSONを読み込んでイベントリスナーを設定する関数
 async function loadJSON() {
   try {
-    const response = await fetch('YAML6.yaml');
+    const response = await fetch('../YAML6.yaml');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
