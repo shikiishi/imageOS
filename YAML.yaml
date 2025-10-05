@@ -1,0 +1,39 @@
+moduleAdr: ./modules/
+moduleNames:
+  - toGrayscale
+  - invertColors
+  - edgeDetection
+  - sharp
+  - Blur
+  - binerger
+  - transparencyFilter
+layerP:
+  - [{uiId: A, event: click, function: A}] #イベントリスナー
+
+  - {layerNum: 1}
+  - [{input: 1}] # 写真ファイルを入力としている
+  - [{num: 0, for: 1}, {num: img, for: 1}, {num: 1, for: 1}, {num: 2, for: 1}] #◀次のレイヤーに渡す（imgは写真）
+
+  - {layerNum: 6}
+  - []
+  - [{num: 0, for: 1}, {num: 1, for: 1}, {num: 2, for: 1}] #◀
+
+  - {layerNum: 2}
+  - []
+  - [{num: 0, for: 1}, {num: 1, for: 1}, {num: 2, for: 1}] #◀
+
+
+ui:
+  - domId: A
+    type: button
+  - domId: B
+    domName: B
+    type: input
+    inputType: radio
+  - domId: D
+    domName: B
+    type: input
+    inputType: radio
+  - domId: C
+    type: input
+    inputType: number

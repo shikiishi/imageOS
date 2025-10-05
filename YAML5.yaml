@@ -1,0 +1,48 @@
+moduleAdr: ./modules/
+moduleNames:
+  - toGrayscale
+  - invertColors
+  - edgeDetection
+  - sharp
+  - Blur
+  - binerger
+  - transparencyFilter
+
+# layerPは、複数のレイヤー定義を格納するリスト（配列）です。
+# 全体を一つの `[]` で囲み、各レイヤー定義をカンマ `,` で区切ります。
+layerP: [
+  # --- 1つ目のレイヤー定義 ---
+  [
+    [{uiId: A, event: click, function: A}],
+    {layerNum: 1},
+    [{input: "img", for: 0},{input: "imgWide", for: 0},{input: "imgHeight", for: 0}],
+    [{num: 0, for: 1}, {num: 1, for: 1}, {num: 2, for: 1}]
+  ],
+
+  # --- 2つ目のレイヤー定義 ---
+  [
+    [{uiId: A, event: click, function: A}],
+    {layerNum: 4},
+    [{input: "img", for: 1},{input: "imgWide", for: 1},{input: "imgHeight", for: 1}],
+    [{num: 0, for: 1}, {num: "img", for: 2}, {num: 1, for: 1}, {num: 2, for: 1}],
+
+    {layerNum: 6},
+    [],
+    [{num: 0, for: 1}, {num: 1, for: 1}, {num: 2, for: 1}]
+  ]
+]
+
+ui:
+  - domId: A
+    type: button
+  - domId: B
+    domName: B
+    type: input
+    inputType: radio
+  - domId: D
+    domName: B
+    type: input
+    inputType: radio
+  - domId: C
+    type: input
+    inputType: number
