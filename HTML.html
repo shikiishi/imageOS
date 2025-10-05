@@ -1,23 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="jp">
 <head>
-  <meta charset="UTF-8">
-  <title>画像をデータに変換</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リストに従い、イベントリスナーを自動で追加します。</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script> //ライブラリーの読み込み
 </head>
-<body bgcolor="#003b5b"></body>
-<body>
-  <h1>画像をデータに変換</h1>
-  <input type="file" id="fileInput">
-
-  <select id="moduleList">
-    <!-- moduleNamesの項目がここに追加されます -->
-  </select>
-  <button id="clearButton">消去</button>
-  <p id="selectedText"></p>
-
-  <p id="imageDataText"></p>
-  <canvas id="canvas"></canvas>
-
-  <script type="module" src="script.js"></script>
+<body style="background-color: rgb(255, 0, 0);">
+    <input type="file" id="fileInput">
+    <div id="parent"></div>
+    <!-- キャンバスが配置されるコンテナー -->
+    <div id="canvas-container" class="mt-8 bg-gray-200 rounded-xl p-2">
+    <!-- ここにJavaScriptによってCanvasが追加されます -->
+    </div>
 </body>
+<script src="script.js" type="module"></script>
 </html>
